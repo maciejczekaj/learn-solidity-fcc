@@ -1,3 +1,6 @@
 *.abi
 *.bin
 node_modules/
+sonarlint/
+/.pnpm-debug.log
+.env
