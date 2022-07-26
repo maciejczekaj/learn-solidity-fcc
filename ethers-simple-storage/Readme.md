@@ -1,4 +1,6 @@
-# Usage:
+# Ethers Simple Storage
+
+## Usage:
 
 1. Install dependencies with `pnpm install`
 2. Compile `.sol` file with `pnpm run compile`

@@ -1,6 +1,6 @@
-import {Contract, ContractFactory, providers, ethers} from "ethers";
+import { Contract, ContractFactory, providers, ethers } from 'ethers';
 import * as fs from 'fs-extra';
-import {config} from 'dotenv';
+import { config } from 'dotenv';
 
 config();
 
@@ -16,8 +16,14 @@ async function deploy() {
     // let wallet = ethers.Wallet.fromEncryptedJsonSync(encryptedJson, process.env.PRIVATE_KEY_PASSWORD);
     // wallet.connect(provider);
 
-    const abi = fs.readFileSync('./SimpleStorage_sol_SimpleStorage.abi', 'utf8');
-    const binary = fs.readFileSync('./SimpleStorage_sol_SimpleStorage.bin', 'utf8');
+    const abi = fs.readFileSync(
+        './SimpleStorage_sol_SimpleStorage.abi',
+        'utf8'
+    );
+    const binary = fs.readFileSync(
+        './SimpleStorage_sol_SimpleStorage.bin',
+        'utf8'
+    );
 
     const contractFactory = new ContractFactory(abi, binary, wallet);
     console.log('Deploying, please wait...');
@@ -44,15 +50,17 @@ async function deploy() {
     let storedNumber = await contract.retrieve();
     console.log(`Current favorite number: ${storedNumber.toString()}`);
 
-    const transactionResponse = await contract.store("7");
+    const transactionResponse = await contract.store('7');
     await transactionResponse.wait(1);
     storedNumber = await contract.retrieve();
     console.log(`Updated favorite number: ${storedNumber.toString()}`);
 }
 
-deploy().then(() => {
-    process.exit(0);
-}).catch((error) => {
-    console.error(error);
-    process.exit(1);
-});
+deploy()
+    .then(() => {
+        process.exit(0);
+    })
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
