@@ -7,11 +7,9 @@
 		"test": "hardhat test"
 	},
 	"license": "MIT",
-	"dependencies": {
-		"dotenv": "^16.0.1"
-	},
 	"devDependencies": {
 		"@nomicfoundation/hardhat-toolbox": "^1.0.2",
+		"dotenv": "^16.0.1",
 		"hardhat": "^2.10.1"
 	},
 	"engines": {
