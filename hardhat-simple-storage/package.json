@@ -4,7 +4,7 @@
 	"scripts": {
 		"build": "hardhat compile",
 		"deploy": "hardhat run scripts/deploy.ts",
-		"test": "hardhat test"
+		"test": "hardhat typechain && hardhat test"
 	},
 	"license": "MIT",
 	"devDependencies": {
