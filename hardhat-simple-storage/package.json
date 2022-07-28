@@ -1,0 +1,21 @@
+{
+	"name": "hardhat-simple-storage",
+	"version": "0.0.1",
+	"scripts": {
+		"build": "hardhat compile",
+		"deploy": "hardhat run scripts/deploy.ts",
+		"test": "hardhat test"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"dotenv": "^16.0.1"
+	},
+	"devDependencies": {
+		"@nomicfoundation/hardhat-toolbox": "^1.0.2",
+		"hardhat": "^2.10.1"
+	},
+	"engines": {
+		"node": "16",
+		"npm": ">=8"
+	}
+}
