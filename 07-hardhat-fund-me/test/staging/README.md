@@ -1,0 +1,1 @@
+Staging tests can be done on a testnet
