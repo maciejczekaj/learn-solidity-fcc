@@ -24,7 +24,7 @@ developmentChains.includes(network.name)
                 const startingTimestamp = await raffle.getLatestTimestamp();
                 const accounts = await ethers.getSigners();
 
-                await new Promise(async (resolve, reject) => {
+                await new Promise<void>(async (resolve, reject) => {
                     // setup listener before we enter the raffle
                     // just in case the blockchain moves REALLY fast
                     raffle.once('WinnerPicked', async () => {
@@ -43,7 +43,7 @@ developmentChains.includes(network.name)
                         } catch (e) {
                             reject(e);
                         }
-                        resolve({});
+                        resolve();
                     });
 
                     // Then entering the raffle
