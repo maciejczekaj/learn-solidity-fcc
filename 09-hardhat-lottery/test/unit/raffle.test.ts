@@ -87,6 +87,7 @@ import { Address } from 'hardhat-deploy/dist/types';
                 const { upkeepNeeded } = await raffle.callStatic.checkUpkeep([]);
 
                 expect(upkeepNeeded).to.be.false;
+                await network.provider.send('evm_setAutomine', [true]);
             });
 
             it('should return true if enough time has passed, has players, eth, and is open', async function() {
@@ -139,7 +140,6 @@ import { Address } from 'hardhat-deploy/dist/types';
                 // we will have to wait for the fulfillRandomWords to be called
                 await new Promise(async (resolve, reject) => {
                     raffle.once('WinnerPicked', async () => {
-                        console.log('Found the evenet!');
                         try {
                             const winnerEndingBalance = await accounts[1].getBalance();
                             const raffleState = await raffle.getRaffleState();
