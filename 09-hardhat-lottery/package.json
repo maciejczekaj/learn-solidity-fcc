@@ -6,7 +6,7 @@
 		"deploy": "hardhat deploy",
 		"typechain": "hardhat typechain",
 		"test": "hardhat test",
-		"test:staging": "hardhat test --network rinkeby",
+		"test:staging": "hardhat test --network mumbai",
 		"coverage": "hardhat coverage",
 		"lint": "solhint 'contracts/*.sol --fix",
 		"format": "prettier --write ."

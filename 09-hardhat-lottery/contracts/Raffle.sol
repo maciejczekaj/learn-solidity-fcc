@@ -91,7 +91,6 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
         bool timePassed = (block.timestamp - s_lastTimestamp) > i_interval;
         bool hasPlayers = s_players.length > 0;
         bool hasBalance = address(this).balance > 0;
-
         // assignment to return variable returns it automatically
         upkeepNeeded = isOpen && timePassed && hasPlayers && hasBalance;
     }
